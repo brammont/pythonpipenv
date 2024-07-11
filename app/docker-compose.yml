@@ -1,0 +1,16 @@
+version: "3.8" # Adjust version based on your Docker Compose version
+
+networks:
+  # Explicitly define the network name as "api-test"
+  api-test:
+    # Optional network driver or configuration options for advanced use cases
+
+services:
+  app-csv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    networks:
+      - api-test
